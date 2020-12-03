@@ -8,8 +8,8 @@ Scripts to assist with the genome assembly and annotation of Calocybe indica
 
 #### Python dependencies
 
-- biopython
-- pandas
+- [biopython](https://biopython.org/)
+- [pandas](https://pandas.pydata.org/)
 
 #### Set up
 
