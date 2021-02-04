@@ -25,10 +25,11 @@ export r1=$2
 export r2=$3
 export assembly_dir=$4
 
+t=20
 #assemble genome
 conda activate flye-env
 
-flye --nano-raw ${nanoreads} --out-dir ${assembly_dir} --threads 20 -i 3
+flye --nano-raw ${nanoreads} --out-dir ${assembly_dir} --threads ${t} -i 3
 cd ${assembly_dir}
 
 conda deactivate
@@ -43,11 +44,11 @@ assembly="assembly.fasta"
 for i in {1..3}
 do
   polish_dir="polish_round_${i}"
-  mkdir polish_folder
-  aln="${polish_dir}/aln-sorted.bam"
+  mkdir ${polish_dir}
+  sorted_aln="${polish_dir}/aln-sorted.bam"
   pilon_out="${polish_dir}/pilon_out"
-  minimap3 -ax -t 20 sr ${assembly} ${r1} ${r2} | samtools view -u | samtools sort -@ 20 > ${aln}
-  pilon --genome ${assembly} --frags ${aln} --threads 20 --outdir ${pilon_out}
+  minimap3 -ax -t ${t} sr ${assembly} ${r1} ${r2} | samtools view -u | samtools sort -@ ${t} > ${sorted_aln}
+  pilon --genome ${assembly} --frags ${aln} --threads ${t} --outdir ${pilon_out}
   assembly="${pilon_out}/pilon.fasta"
 done
 
