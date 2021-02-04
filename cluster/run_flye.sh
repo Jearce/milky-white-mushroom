@@ -16,7 +16,7 @@ source ~/.bashrc
 if [ $# -ne 4 ]
 then
   echo "Incorrect number of arguments"
-  echo "run_flye.sh <nanoreads> <r1> <2> <outdir>"
+  echo "run_flye.sh <nanoreads> <r1> <r2> <outdir>"
   exit
 fi
 
