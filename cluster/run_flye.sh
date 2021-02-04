@@ -47,7 +47,7 @@ do
   mkdir ${polish_dir}
   sorted_aln="${polish_dir}/aln-sorted.bam"
   pilon_out="${polish_dir}/pilon_out"
-  minimap3 -ax -t ${t} sr ${assembly} ${r1} ${r2} | samtools view -u | samtools sort -@ ${t} > ${sorted_aln}
+  minimap2 -ax -t ${t} sr ${assembly} ${r1} ${r2} | samtools view -u | samtools sort -@ ${t} > ${sorted_aln}
   pilon --genome ${assembly} --frags ${aln} --threads ${t} --outdir ${pilon_out}
   assembly="${pilon_out}/pilon.fasta"
 done
