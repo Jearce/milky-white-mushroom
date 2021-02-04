@@ -44,7 +44,7 @@ do
   sorted_aln="${polish_dir}/aln-sorted.bam"
   pilon_out="${polish_dir}/pilon_out"
   minimap2 -ax sr ${assembly} ${r1} ${r2} | samtools view -u | samtools sort -@ ${t} > ${sorted_aln}
-  pilon --genome ${assembly} --frags ${aln} --outdir ${pilon_out}
+  pilon --genome ${assembly} --frags ${sorted_aln} --outdir ${pilon_out}
   assembly="${pilon_out}/pilon.fasta"
 done
 
