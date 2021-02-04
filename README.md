@@ -8,8 +8,8 @@ Scripts to assist with the genome assembly and annotation of Calocybe indica
 
 #### Python dependencies
 
-- biopython
-- pandas
+- [biopython](https://biopython.org/)
+- [pandas](https://pandas.pydata.org/)
 
 #### Set up
 
@@ -31,7 +31,7 @@ chmod +x extract_and_format_fungi_names.py
 
 #### Usage
 
-download_fungal_genome.sh taks a single csv file from EnsemblFungi (http://fungi.ensembl.org/species.html)
+download_fungal_genome.sh takes a single csv file from [EnsemblFungi](http://fungi.ensembl.org/species.html)
 and will use the name of the organisms to download all CDS in fasta format.
 
 Below is the help message:
