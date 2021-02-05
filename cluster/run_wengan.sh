@@ -38,7 +38,7 @@ conda activate polish-env
 module load SAMtools/1.9-intel-2017b
 
 #three rounds of polishing
-assembly="${prefix}.SPolished.${prefix}.wengan.fasta"
+assembly="${prefix}.SPolished.asm.wengan.fasta"
 for i in {1..3}
 do
   polish_dir="polish_round_${i}"
