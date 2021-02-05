@@ -24,12 +24,13 @@ then
 fi
 
 export nano=$1; export r1=$2; export r2=$3;
+t=20
 
 conda activate wengan-runtime-env
 
 export LD_LIBRARY_PATH=/project/balan/anaconda3/envs/wengan-runtime-env/lib
 prefix="white";
-wengan.pl -x ontraw -a M -s ${r1},${r2} -l ${nano} -p ${prefix} -t 20 -g 28
+wengan.pl -x ontraw -a M -s ${r1},${r2} -l ${nano} -p ${prefix} -t ${t} -g 28
 
 conda deactivate
 
