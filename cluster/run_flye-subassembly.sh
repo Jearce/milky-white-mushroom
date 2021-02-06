@@ -10,7 +10,7 @@ set -e
 set -u
 set -o pipefail
 
-if [ $# -ne 3 ]
+if [ $# -ne 5 ]
 then
   echo "Incorrect number of arguments"
   echo "run_flye-subassembly.sh <assembly 1> <assembly 2> <r1> <r2> <outdir>"
