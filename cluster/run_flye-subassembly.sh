@@ -27,7 +27,7 @@ source ~/.bashrc
 
 conda activate flye-env
 
-flye --subassemblies ${a1} ${a2} --out-dir ${out_dir} -t ${t} -g 28m -i 3
+flye --subassemblies ${a1} ${a2} --out-dir ${out_dir} -t ${t} -i 3
 
 conda deactivate 
 
