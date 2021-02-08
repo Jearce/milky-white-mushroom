@@ -36,9 +36,9 @@ fi
 export assembly=$1; export r1=$2; export r2=$3;
 
 #prepare fungap
-conda activate maker
+conda activate maker-env
 export MAKER_DIR=$(dirname $(which maker))
-conda activate fungap
+conda activate fungap-env
 cd $FUNGAP_DIR
 ./set_dependencies.py --pfam_db_path db/pfam/ --genemark_path external/gmes_linux_64/ --maker_path ${MAKER_DIR}
 
