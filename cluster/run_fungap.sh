@@ -17,7 +17,7 @@ source ~/.bashrc
 
 #set paths to prepare fungap correctly 
 export PROJECT_DIR="/project/balan"
-export FUNGAP_DIR="${PROJECT_DIR}/FunGAP"
+export FUNGAP_DIR="${PROJECT_DIR}/bin/FunGAP"
 export SISTER_DIR="${PROJECT_DIR}/milky-white-mushroom/annotations/sister_orgs"
 
 if [ $# -ne 3 ]
