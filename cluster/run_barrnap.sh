@@ -3,7 +3,7 @@
 #SBATCH -o barrnap.o%j
 #SBATCH -c 10
 #SBATCH --mem=18G
-#SBATCH -t 02:00:00
+#SBATCH -t 00:30:00
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=jearce2@uh.edu
 set -e
