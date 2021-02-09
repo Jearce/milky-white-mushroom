@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -J flyeSub
-#SBATCH -o flyeSub.o%j
+#SBATCH -J barrnap
+#SBATCH -o barrnap.o%j
 #SBATCH -c 10
 #SBATCH --mem=18G
 #SBATCH -t 02:00:00
