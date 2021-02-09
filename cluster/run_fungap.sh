@@ -52,7 +52,7 @@ ${FUNGAP_DIR}/fungap.py --output_dir ${out_dir}\
  --genome_assembly ${assembly}\
  --augustus_species coprinus_cinereus\
  --sister_proteome ${SISTER_DIR}/prot_db.faa\
- --num_cores 30 --busco_dataset basidoiomycota_odb10
+ --num_cores 30 --busco_dataset basidiomycota_odb10
 
 #get out of fungap env
 conda deactivate
