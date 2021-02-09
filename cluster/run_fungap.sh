@@ -3,7 +3,7 @@
 #SBATCH -o fungap.o%j
 #SBATCH -c 30
 #SBATCH --mem=32G
-#SBATCH -t 6-10:00:00
+#SBATCH -t 3-4:00:00
 
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=<your email>
@@ -51,7 +51,7 @@ ${FUNGAP_DIR}/fungap.py --output_dir fungap_out\
  --genome_assembly ${ASSEMBLY}\
  --augustus_species coprinus_cinereus\
  --sister_proteome ${SISTER_DIR}/prot_db.faa\
- --num_cores 20 --busco_dataset basidoiomycota_odb10
+ --num_cores 30 --busco_dataset basidoiomycota_odb10
 
 #get out of fungap env
 conda deactivate
