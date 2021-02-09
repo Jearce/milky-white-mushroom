@@ -25,7 +25,7 @@ source ~/.bashrc
 conda activate barrnap
 
 export contigs=$1
-barrnap --threads 10 --evalue 1e-16 -o rrna.fa < ${contigs} > rrna.gff
+barrnap --threads 10 --kingdom euk --evalue 1e-16 -o rrna.fa < ${contigs} > rrna.gff
 
 conda deactivate
 
