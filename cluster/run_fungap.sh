@@ -48,7 +48,7 @@ cd /project/balan/milky-white-mushroom/annotations
 #annotate with fungap
 ${FUNGAP_DIR}/fungap.py --output_dir fungap_out\
  --trans_read_1 ${r1} --trans_read_2 ${r2}\
- --genome_assembly ${ASSEMBLY}\
+ --genome_assembly ${assembly}\
  --augustus_species coprinus_cinereus\
  --sister_proteome ${SISTER_DIR}/prot_db.faa\
  --num_cores 30 --busco_dataset basidoiomycota_odb10
