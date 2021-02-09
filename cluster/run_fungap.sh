@@ -18,22 +18,23 @@ source ~/.bashrc
 #set paths to prepare fungap correctly 
 export PROJECT_DIR="/project/balan"
 export FUNGAP_DIR="${PROJECT_DIR}/bin/FunGAP"
-export SISTER_DIR="${PROJECT_DIR}/milky-white-mushroom/annotations/sister_orgs"
+export SISTER_DIR="${PROJECT_DIR}/milky-white-mushoom/annotations/sister_orgs"
 
-if [ $# -ne 3 ]
+if [ $# -ne 4 ]
 then
   echo "  Incorrect number of arguments  "
-  echo "run_fungap.sh <a> <r1> <r2>"
+  echo "run_fungap.sh <a> <r1> <r2> <outdir>"
   echo "Arguments:"
   echo "  a: genome assembly in fasta format"
   echo "  r1: forward read of rna-seq data in fastq format"
   echo "  r2: reverse read of rna-seq data in fastq format"
+  echo "  outdir: output directory"
   exit
 fi
 
 
 #get genome assembly and  rna reads
-export assembly=$1; export r1=$2; export r2=$3;
+export assembly=$1; export r1=$2; export r2=$3;export out_dir=$4;
 
 #prepare fungap
 conda activate maker-env
@@ -43,10 +44,10 @@ cd $FUNGAP_DIR
 ./set_dependencies.py --pfam_db_path db/pfam/ --genemark_path external/gmes_linux_64/ --maker_path ${MAKER_DIR}
 
 
-cd /project/balan/milky-white-mushroom/annotations
+cd /project/balan/milky-white-mushoom/annotations/
 
 #annotate with fungap
-${FUNGAP_DIR}/fungap.py --output_dir fungap_out\
+${FUNGAP_DIR}/fungap.py --output_dir ${out_dir}\
  --trans_read_1 ${r1} --trans_read_2 ${r2}\
  --genome_assembly ${assembly}\
  --augustus_species coprinus_cinereus\
