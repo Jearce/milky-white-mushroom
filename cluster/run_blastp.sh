@@ -16,7 +16,7 @@ set -o pipefail
 set +eu
 source ~/.bashrc 
 
-if [ $# -ne 2 ]
+if [ $# -ne 3 ]
 then
 	echo "Incorrect number of arguments"
 	echo "run_blastp.sh <query> <db_name> <out>"
