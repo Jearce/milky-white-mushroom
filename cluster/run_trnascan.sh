@@ -26,6 +26,6 @@ export contigs=$1
 
 conda activate trnascan-se-env
 
-tRNAscan-SE -E -o trnas.fasta -f trnas_stuctures.txt -m trna.models -H ${contigs}
+tRNAscan-SE -H -Q -E -o trnas.txt -f trnas_stuctures.txt -m trna.models -a trans.fasta -s isospecific.txt ${contigs}
 
 conda deactivate
