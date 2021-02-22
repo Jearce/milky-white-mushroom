@@ -1,5 +1,6 @@
-#SBATCH -J braker
-#SBATCH -o braker.o%j
+#!/bin/bash
+#SBATCH -J brakerP
+#SBATCH -o brakerP.o%j
 #SBATCH -c 22
 #SBATCH --mem=20G
 #SBATCH -t 05:00:00
