@@ -30,7 +30,7 @@ then
 fi
 conda activate braker-env
 
-prothint.py ${contigs} ${proteins} --threads ${t}
+prothint.py ${contigs} ${proteins} --fungus --threads ${t}
 
 export hints="prothint_augustus.gff"
 
