@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #SBATCH -J trna
 #SBATCH -o trna.o%j
 #SBATCH -c 12
