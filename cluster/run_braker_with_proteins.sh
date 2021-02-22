@@ -30,15 +30,7 @@ then
 fi
 conda activate braker-env
 
-prothint.py ${contigs} ${proteins} --fungus --threads ${t}
-
-export hints="prothint_augustus.gff"
-
-if [ -f ${hints} ]
-then
-	braker.pl --species="calocybe_indica" --genome=${contigs} --hints=${hints} --epmode --softmasking --fungus --cores ${t}
-else
-	"${hints} does not exist"
-fi
+export ALIGNMENT_TOOL_PATH=$(which spaln)
+braker.pl --species="calocybe_indica" --genome=${contigs} --prot_seq=${proteins} --epmode --softmasking --fungus --cores ${t}
 
 conda deactivate
