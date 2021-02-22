@@ -36,7 +36,7 @@ export hints="prothint_augustus.gff"
 
 if [ -f ${hints} ]
 then
-	braker.pl --genome=${contigs} --hints=${hints} --softmasking --fungus --cores ${t}
+	braker.pl --species="calocybe_indica" --genome=${contigs} --hints=${hints} --epmode=1 --softmasking --fungus --cores ${t}
 else
 	"${hints} does not exist"
 fi
