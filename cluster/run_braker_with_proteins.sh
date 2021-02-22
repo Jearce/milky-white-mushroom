@@ -1,7 +1,7 @@
 #SBATCH -J braker
 #SBATCH -o braker.o%j
-#SBATCH -c 20
-#SBATCH --mem=15G
+#SBATCH -c 22
+#SBATCH --mem=20G
 #SBATCH -t 05:00:00
 #SBATCH --mail-type=END,FAIL
 
@@ -20,7 +20,7 @@ then
 	exit
 fi
 
-export contigs=$1; export proteins=$2;
+export contigs=$1; export proteins=$2;export t=22;
 
 if ! egrep -e "[atgc]" ${contigs}
 then
@@ -29,13 +29,13 @@ then
 fi
 conda activate braker-env
 
-prothint.py ${contigs} ${proteins} --threads 20
+prothint.py ${contigs} ${proteins} --threads ${t}
 
 export hints="prothint_augustus.gff"
 
 if [ -f ${hints} ]
 then
-	braker.pl --genome=${contigs} --hints=${hints} --softmasking --fungus --cores 20
+	braker.pl --genome=${contigs} --hints=${hints} --softmasking --fungus --cores ${t}
 else
 	"${hints} does not exist"
 fi
