@@ -26,6 +26,6 @@ export contigs=$1
 conda activate braker-env
 
 #pipeline: contigs --> genemark es --> augutus training --> augustus --> resutls
-braker.pl --genome=${contigs} --softmasking --esmode --fungus --cores 20
+braker.pl --species="calocybe_indica" --genome=${contigs} --softmasking --esmode --fungus --cores 20
 
 conda deactivate
