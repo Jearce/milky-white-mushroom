@@ -4,10 +4,9 @@
 #SBATCH -c 20
 #SBATCH --cpus-per-task=5
 #SBATCH --mem=18G
-#SBATCH -t 10:00:00
-
+#SBATCH -t 05:00:00
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=jearce2@uh.edu
+
 set -e
 set -u
 set -o pipefail
@@ -19,16 +18,18 @@ source ~/.bashrc
 if [ $# -ne 3 ]
 then
 	echo "Incorrect number of arguments"
-	echo "run_blastp.sh <query> <db_name> <out>"
+	echo "${0} <query> <db_name> <out>"
 	exit
 fi
 
-export query=$1
-export db_name=$2
-export out=$3
+export query=$1; export db_name=$2; export out=$3;
 
 conda activate blast-env
 
-blastp -query ${query} -db ${db_name} -outfmt 7 -out ${out} -num_threads 20 -evalue 1e-6
+blastp -query ${query} -db ${db_name}\
+	-outfmt "7 qacc sacc qstart qend sstart send evalue pident qlen slen bitscore qcovs qcovhsp"\
+	-out ${out}\
+	-num_threads 20\
+	-evalue 1e-6
 
 conda deactivate
