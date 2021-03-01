@@ -29,7 +29,6 @@ for file in ${@}
 do
   run_dbcan.py ${file} protein \
     --out_dir $(basename -- "${file%.*}")\
-    --tools all\
     --hmm_cpu ${t}\
     --dia_cpu ${t}\
     --hotpep_cpu ${t}\
