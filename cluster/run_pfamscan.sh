@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH -J pfam 
 #SBATCH -o pfam.o%j
-#SBATCH -c 16
-#SBATCH --mem=10G
-#SBATCH -t 02:00:00
+#SBATCH -c 20
+#SBATCH --mem=15G
+#SBATCH -t 05:00:00
 #SBATCH --mail-type=END,FAIL
 set -e
 set -u
@@ -24,6 +24,6 @@ export db="/project/balan/milky-white-mushoom/db/pfamdb"
 
 conda activate pfam-env
 
-pfam_scan.pl -fasta ${fasta} -dir ${db} -cpu 16 -outfile pfam_hits.txt -json pretty
+pfam_scan.pl -fasta ${fasta} -dir ${db} -cpu 20 -outfile pfam_hits.txt
 
 conda deactivate 
