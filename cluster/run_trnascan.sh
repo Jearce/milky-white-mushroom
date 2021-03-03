@@ -15,17 +15,26 @@ set +eu
 source ~/.bashrc 
 
 
-if [ $# -ne 1 ]
+if [ $# -eq 0 ]
 then
 	echo "Incorrect number of arguments"
-	echo "$0 <contigs>"
+	echo "$0 [contigs files]"
 	exit
 fi
 
-export contigs=$1
-
 conda activate trnascan-se-env
 
-tRNAscan-SE -H -Q -E -o trnas.txt -f trnas_stuctures.txt -m trna.models -a trans.fasta -s isospecific.txt ${contigs}
+for contig in ${@}
+do
+  export out_dir=$(basename -- "${file%.*}")
+  mkdir ${out_dir}
+  tRNAscan-SE -H -Q -E\
+    -o ${out_dir}/trnas.txt\
+    -f ${out_dir}/trnas_stuctures.txt\
+    -m ${out_dir}/trna.models\
+    -a ${out_dir}/trans.fasta\
+    -s ${out_dir}/isospecific.txt\
+    ${contigs}
+done
 
 conda deactivate
