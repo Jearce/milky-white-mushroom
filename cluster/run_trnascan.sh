@@ -26,15 +26,14 @@ conda activate trnascan-se-env
 
 for contig in ${@}
 do
-  export out_dir=$(basename -- "${file%.*}")
+  export out_dir=$(basename -- "${contig%.*}")
   mkdir ${out_dir}
-  tRNAscan-SE -H -Q -E\
-    -o ${out_dir}/trnas.txt\
-    -f ${out_dir}/trnas_stuctures.txt\
-    -m ${out_dir}/trna.models\
-    -a ${out_dir}/trans.fasta\
-    -s ${out_dir}/isospecific.txt\
-    ${contigs}
+  tRNAscan-SE -H -Q -E \
+    -o "${out_dir}/trnas.txt" \
+    -f "${out_dir}/trnas_stuctures.txt" \
+    -m "${out_dir}/trna.models" \
+    -a "${out_dir}/trans.fasta" \
+    -s "${out_dir}/isospecific.txt" ${contig}
 done
 
 conda deactivate
