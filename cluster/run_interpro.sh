@@ -28,7 +28,6 @@ conda activate java11-env
 
 interproscan.sh \
   -d interpro_out\
-  -b mwm \
   -f tsv, gff3, html, json\
   -goterms\
   -cpu 20\
