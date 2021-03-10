@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -J blastp
-#SBATCH -o blastp.o%j
+#SBATCH -J proscan
+#SBATCH -o proscan.o%j
 #SBATCH -c 20
 #SBATCH --mem=18G
 #SBATCH -t 10:00:00
