@@ -24,6 +24,8 @@ fi
 
 export fasta=$1
 
+conda activate java11-env
+
 interproscan.sh \
   -d interpro_out\
   -b mwm \
@@ -32,3 +34,4 @@ interproscan.sh \
   -cpu 20\
   -i ${fasta}
 
+conda deactivate 
