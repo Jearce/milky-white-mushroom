@@ -5,7 +5,7 @@
 #SBATCH --mem=64G
 #SBATCH -t 15:00:00
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=joshua.zhuang7@gmail.com
+
 set -e
 set -u
 set -o pipefail
