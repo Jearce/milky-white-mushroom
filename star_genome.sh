@@ -5,7 +5,7 @@
 #SBATCH --mem=128G
 #SBATCH -t 05:00:00
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=joshua.zhuang7@gmail.com
+
 
 set -e
 set -u
