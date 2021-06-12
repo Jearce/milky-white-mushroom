@@ -27,7 +27,7 @@ export query=$1; export db_name=$2; export out=$3;
 conda activate blast-env
 
 blastp -query ${query} -db ${db_name}\
-	-outfmt "7 qacc sacc qstart qend sstart send evalue pident qlen slen bitscore qcovs qcovhsp"\
+	-outfmt "6 qacc sacc qstart qend sstart send evalue pident qlen slen bitscore qcovs qcovhsp"\
 	-out ${out}\
 	-num_threads 20\
 	-evalue 1e-6
