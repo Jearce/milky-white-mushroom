@@ -11,6 +11,7 @@ Scripts to assist with the genome assembly and annotation of Calocybe indica
 - [biopython](https://biopython.org/)
 - [pandas](https://pandas.pydata.org/)
 
+
 #### Set up
 
 Clone repo:
@@ -38,5 +39,13 @@ Below is the help message:
 ```
 usage: ./download_fungal_genomes.sh <csv file>
  Any failed downloads are logged to fungal.downloads.log file.
+```
+
+#### Assembly
+
+Create conda env.
+
+```bash
+mamba env create -f assembly_env.yaml
 ```
 
